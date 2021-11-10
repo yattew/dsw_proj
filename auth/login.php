@@ -9,11 +9,16 @@
 
 <body>
     <div id="container">
-        <h3>MiniKiosk</h3>
+        <h2>MiniKiosk</h2>
         <div id="form-wrapper">
             <form action="#">
-                Enrolment Number: <input type="number" name="login" id="enrol">
-                Password: <input type="password" name="login" id="pass">
+                <div> <label for="enrol">Enrolment Number: </label>
+                    <div><input type="number" name="enrol" id="enrol"> </div>
+                </div>
+                <div> <label for="pass">Password:</label>
+                    <div><input type="password" name="pass" id="pass"> </div>
+                </div>
+                <input type="submit" value="Submit">
             </form>
         </div>
     </div>
