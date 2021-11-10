@@ -3,7 +3,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/login.css">
+    <link rel="stylesheet" href="assets/index.css">
     <title>Login | MiniKiosk</title>
 </head>
 
@@ -11,7 +11,7 @@
     <div id="container">
         <h2>MiniKiosk</h2>
         <div id="form-wrapper">
-            <form action="#">
+            <form action="#" method="POST">
                 <div> <label for="enrol">Enrolment Number: </label>
                     <div><input type="number" name="enrol" id="enrol"> </div>
                 </div>
