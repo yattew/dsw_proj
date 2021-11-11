@@ -11,14 +11,12 @@
     <div id="container">
         <h2>MiniKiosk</h2>
         <div id="form-wrapper">
-            <form action="#" method="POST">
-                <div> <label for="enrol">Enrolment Number: </label>
-                    <div><input type="number" name="enrol" id="enrol"> </div>
-                </div>
-                <div> <label for="pass">Password:</label>
-                    <div><input type="password" name="pass" id="pass"> </div>
-                </div>
-                <input type="submit" value="Submit">
+            <h3>LOGIN</h3>
+            <!-- Temporarily changed method to GET to avoid reload prompts in browser -->
+            <form action="#" method="GET">
+                <input type="number" placeholder="Enrolment Number" name="enrol" id="enrol">
+                <input type="password" placeholder="Password" name="pass" id="pass">
+                <input type="submit" value="Login">
             </form>
         </div>
     </div>
