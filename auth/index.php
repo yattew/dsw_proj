@@ -16,7 +16,7 @@
             <form action="#" method="GET">
                 <input type="number" placeholder="Enrolment Number" name="enrol" id="enrol">
                 <input type="password" placeholder="Password" name="pass" id="pass">
-                <input type="submit" value="Login">
+                <div><input type="submit" value="Login"></div>
             </form>
         </div>
     </div>
