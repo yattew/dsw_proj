@@ -1,3 +1,6 @@
+<?php
+    include "../partials/session.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +10,8 @@
     <title>Document</title>
 </head>
 <body>
-    1
     <?php
-        print "<div>hemlo friends</div>";
+    header("location: auth/login.php")
     ?>
-    2
 </body>
 </html>
