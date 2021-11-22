@@ -11,7 +11,7 @@
 </head>
 <body>
     <?php
-    header("location: auth/login.php")
+    header("location: auth/loginStudent.php")
     ?>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
-    include "../partials/session.php";
-    include "../partials/messages.php"
+include "../partials/session.php";
+include "../partials/messages.php"
 ?>
 
 <?php
@@ -9,12 +9,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $enroll = 123;
     $password = "pass";
     if ($_POST["enroll"] == $enroll and $password == $_POST["password"]) {
-        set_message("you are now logged in!!!");
+        set_message("Status: Logged in");
         header("location: /dsw_proj/student/index.php");
         die;
-        
     } else {
-        $error = "the entered password or enrollment number is wrong";
+        $error = "User credentials are incorrect.";
         set_message($error);
     }
 }
@@ -30,25 +29,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-    <?php
-    if (has_messages()) {
-        echo "<div id='errors'>";
-        show_messages();
-        delete_messages();
-        echo "</div>";
-    }
-    ?>
     <div id="container">
         <h2>MiniKiosk</h2>
         <div id="form-wrapper">
-            <h3>LOGIN</h3>
-            <!-- Temporarily changed method to GET to avoid reload prompts in browser -->
-            <form action="login.php" method="POST">
+            <h3>STUDENT LOGIN</h3>
+            <!-- Temporarily change method to GET to avoid reload prompts in browser -->
+            <form action="loginStudent.php" method="POST">
                 <input type="number" placeholder="Enrolment Number" name="enroll" id="enrol">
                 <input type="password" placeholder="Password" name="password" id="pass">
                 <div><input type="submit" value="Login"></div>
+                <div id="credStat"><?php
+                                    if (has_messages()) {
+                                        echo "<div id='errors'>";
+                                        show_messages();
+                                        delete_messages();
+                                        echo "</div>";
+                                    }
+                                    ?></div>
             </form>
-        </div>
+            <div id="loginElsewhere">
+            or <a href="loginTeacher.php">click here</a> to go to the faculty login page
+        </div> </div>
     </div>
 </body>
 
