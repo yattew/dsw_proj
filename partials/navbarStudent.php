@@ -1,7 +1,7 @@
 <?php
 $navbar = '
-<div id="navbar">
-    <h3>MiniKiosk</h3>
+<div id="navbar"> 
+    <div id="title"><h3>MiniKiosk</h3><small>Student Dashboard</small></div>
     <div id="nav-items">
         <div class="nav-item"> <a href="studentProfile.php">Profile</a></div>
         <div class="nav-item"><a href="#">Timetable</a></div>
@@ -12,4 +12,3 @@ $navbar = '
 </div>
 ';
 echo $navbar;
-?>

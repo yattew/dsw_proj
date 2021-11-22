@@ -16,5 +16,5 @@ if(has_messages())
 </head>
 
 <body>
-<?php include "../partials/navbar.php"  ?>
+<?php include "../partials/navbarStudent.php"  ?>
 </body>
