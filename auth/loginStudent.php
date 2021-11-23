@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = "pass";
     if ($_POST["enroll"] == $enroll and $password == $_POST["password"]) {
         set_message("Status: Logged in");
-        header("location: /dsw_proj/student/index.php");
+        header("location: /dsw_proj/student/studentProfile.php");
         die;
     } else {
         $error = "User credentials are incorrect.";
