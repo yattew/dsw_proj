@@ -34,7 +34,7 @@ body {
 }
 .nav-item {
   margin: 0 20px;
-  transition: transform .05s ease-out;
+  transition: transform 0.05s ease-out;
 }
 
 .nav-item:hover {
@@ -48,4 +48,54 @@ body {
 
 .nav-item a:hover {
   color: black;
+}
+
+#profile-wrapper {
+  padding: 40px;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #e6e6e6;
+  min-height: 220px;
+  max-width: 400px;
+  box-shadow: 0px 5px 30px -3px rgb(37, 37, 37);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#container h3 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -1550%);
+}
+
+table {
+  border-collapse: separate;
+    border-spacing: 0 1rem;
+}
+
+th, td, tr {
+  min-width: 150px;
+  padding: 8px 7px;
+  text-align: center;
+}
+
+tr {
+  box-shadow: 0px 5px 20px -15px rgb(37, 37, 37);
+}
+
+tr:nth-child(odd) {
+  background-color: rgba(144, 216, 238, 0.637);
+}
+
+tr:nth-child(even) {
+  background-color: rgba(223, 223, 223, 0.808);
+}
+
+td {
+  margin: 10px;
 }

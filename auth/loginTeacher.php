@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = "pass";
     if ($_POST["enroll"] == $enroll and $password == $_POST["password"]) {
         set_message("Status: Logged in");
-        header("location: /dsw_proj/teacher/index.php");
+        header("location: /dsw_proj/teacher/teacherProfile.php");
         die;
     } else {
         $error = "User credentials are incorrect.";
@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div id="form-wrapper">
             <h3>FACULTY LOGIN</h3>
             <!-- Temporarily change method to GET to avoid reload prompts in browser -->
-            <form action="loginStudent.php" method="POST">
+            <form action="loginTeacher.php" method="POST">
                 <input type="number" placeholder="Faculty ID" name="enroll" id="enrol">
                 <input type="password" placeholder="Password" name="password" id="pass">
                 <div><input type="submit" value="Login"></div>
