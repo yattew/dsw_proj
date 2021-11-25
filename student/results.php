@@ -56,7 +56,7 @@
   <div id="container">
     <table style="width:100%">
       <tr style="height:60px">
-        <th style="width:10%" ;>S. No.</th>
+        <th style="width:10%" ;>S. NO.</th>
         <th>SUBJECT</th>
         <th style="width:18%">EXAM CODE</th>
         <th style="width:15%">GRADE AWARDED</th>
