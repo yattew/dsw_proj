@@ -2,7 +2,11 @@
 session_start();
 if(isset($_SESSION["enroll"]))
 {
-    $_SESSION["enroll"] == false;
+    $_SESSION["id"] == false;
+}
+if(isset($_SESSION["level"]))
+{
+    $_SESSION["level"] = false;
 }
 if(isset($_SESSION["auth_status"]))
 {

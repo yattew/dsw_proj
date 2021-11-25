@@ -1,12 +1,8 @@
-<!-- <?php
+<?php
 include "../partials/session.php";
 include "../partials/messages.php";
-if(has_messages())
-{
-    show_messages();
-    delete_messages();
-}
-?> -->
+include "../partials/faculty_login_required.php"
+?>
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

@@ -11,6 +11,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($_POST["enroll"] == $enroll and $password == $_POST["password"]) {
         set_message("Status: Logged in");
         header("location: /dsw_proj/teacher/teacherProfile.php");
+        $_SESSION["auth_status"] = true;
+        $_SESSION["id"] = $enroll;
+        $_SESSION["level"] = "faculty";
         die;
     } else {
         $error = "User credentials are incorrect.";

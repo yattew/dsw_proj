@@ -10,6 +10,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = "pass";
     if ($_POST["enroll"] == $enroll and $password == $_POST["password"]) {
         set_message("Status: Logged in");
+        $_SESSION["auth_status"] = true;
+        $_SESSION["id"] = $enroll;
+        $_SESSION["level"] = "student";
         header("location: /dsw_proj/student/studentProfile.php");
         die;
     } else {

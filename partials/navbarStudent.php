@@ -7,7 +7,7 @@ $navbar = '
         <div class="nav-item"><a href="timetable.php">Timetable</a></div>
         <div class="nav-item"><a href="attendance.php">Attendance</a></div>
         <div class="nav-item"><a href="results.php">Result</a></div>
-        <div class="nav-item"><a href="#">Logout</a></div>
+        <div class="nav-item"><a href="/dsw_proj/auth/logout.php">Logout</a></div>
     </div>
 </div>
 ';

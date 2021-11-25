@@ -7,6 +7,16 @@ function show_messages()
         }
     }
 }
+function get_messages()
+{
+    $arr = [];
+    if (isset ($_SESSION["messages"])) {
+        foreach ($_SESSION["messages"] as $message) {
+            array_push($arr,$message);
+        }
+    }
+    return $arr;
+}
 function delete_messages(){
     $_SESSION["messages"] = array();
 }

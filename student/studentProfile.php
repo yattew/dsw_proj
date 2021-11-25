@@ -1,11 +1,8 @@
-<!-- <?php
-        include "../partials/session.php";
-        include "../partials/messages.php";
-        if (has_messages()) {
-            show_messages();
-            delete_messages();
-        }
-        ?> -->
+<?php
+include "../partials/session.php";
+include "../partials/messages.php";
+include "../partials/student_login_required.php"
+?>
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,29 +14,41 @@
 <body>
     <?php include "../partials/navbarStudent.php"  ?>
     <div id="container">
-    <h3>PROFILE</h3>
-    <div id="profile-wrapper">
-        <small>Status: You are now logged in</small>
-        <table>
-            <tr>
-                <th>Name</th>
-                <td>Arpit Jain</td>
-            </tr>
-            <tr>
-                <th>Date of Birth</th>
-                <td>23 October 2001</td>
-            </tr><tr>
-                <th>Semester</th>
-                <td>3rd</td>
-            </tr><tr>
-                <th>Batch</th>
-                <td>B2</td>
-            </tr>
-            <tr>
-                <th>Course</th>
-                <td>Computer Science</td>
-            </tr>
-    </div>
-    </table>
+        <h3>PROFILE</h3>
+        <div id="profile-wrapper">
+            <?php
+            if(has_messages())
+            {
+                $messages = get_messages();
+                foreach($messages as $message)
+                {
+                    echo "<small>$message</small>";
+                }
+                delete_messages();
+            }
+            ?>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <td>Arpit Jain</td>
+                </tr>
+                <tr>
+                    <th>Date of Birth</th>
+                    <td>23 October 2001</td>
+                </tr>
+                <tr>
+                    <th>Semester</th>
+                    <td>3rd</td>
+                </tr>
+                <tr>
+                    <th>Batch</th>
+                    <td>B2</td>
+                </tr>
+                <tr>
+                    <th>Course</th>
+                    <td>Computer Science</td>
+                </tr>
+        </div>
+        </table>
     </div>
 </body>
