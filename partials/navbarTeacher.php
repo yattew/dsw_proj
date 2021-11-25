@@ -5,8 +5,8 @@ $navbar = '
     <div id="nav-items">
         <div class="nav-item"> <a href="teacherProfile.php">Profile</a></div>
         <div class="nav-item"><a href="#">Timetable</a></div>
-        <div class="nav-item"><a href="#">Attendance</a></div>
-        <div class="nav-item"><a href="#">Grades</a></div>
+        <div class="nav-item"><a href="/dsw_proj/teacher/attendance.php">Attendance</a></div>
+        <div class="nav-item"><a href="/dsw_proj/teacher/grades.php">Grades</a></div>
         <div class="nav-item"><a href="#">Logout</a></div>
     </div>
 </div>
