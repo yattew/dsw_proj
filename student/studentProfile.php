@@ -16,17 +16,7 @@ include "../partials/student_login_required.php"
     <div id="container">
         <h3>PROFILE</h3>
         <div id="profile-wrapper">
-            <?php
-            if(has_messages())
-            {
-                $messages = get_messages();
-                foreach($messages as $message)
-                {
-                    echo "<small>$message</small>";
-                }
-                delete_messages();
-            }
-            ?>
+            <small>status:Logged In</small>
             <table>
                 <tr>
                     <th>Name</th>
