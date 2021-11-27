@@ -25,16 +25,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
     <?php
-    $students = array("yathansh", "arpit", "nishttha", "simran");
+    $students = array("Yathansh", "Arpit", "Nishttha", "Simran");
     ?>
+    <div id="form-wrapper">
+        <h3>ATTENDANCE</h3>
     <form action="attendance.php" method="POST">
-        date:<input type="date">
+        Date:<input type="date">
         <br>
         <table>
             <tr>
-                <th>name</th>
-                <th>present</th>
-                <th>absent</th>
+                <th>Name</th>
+                <th>Present</th>
+                <th>Absent</th>
             </tr>
             <?php
             foreach ($students as $student) {
@@ -47,8 +49,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             ?>
         </table>
-            <input type="submit" value="save">
+        <div class="btn"><input type="submit" value="Update Attendance"> </div>
     </form>
+    </div>
 </body>
 
 </html>
