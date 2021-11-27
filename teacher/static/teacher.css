@@ -114,3 +114,9 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background: #2ecc71;
 }
+
+#updated {
+  margin-top: 10px;
+  color: red;
+  text-align: center;
+}

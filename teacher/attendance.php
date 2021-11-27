@@ -50,6 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ?>
         </table>
         <div class="btn"><input type="submit" value="Update Attendance"> </div>
+        <div id="updated"><small>Attendance has been updated</small></div>
     </form>
     </div>
 </body>
