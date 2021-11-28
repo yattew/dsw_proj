@@ -7,14 +7,25 @@ include "../partials/sql_connect.php";
 ?>
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    echo "<br><br>";
+    $id = $_SESSION["id"];
+    $subject = "";
+    $res = mysqli_query($conn, "select subject from faculty, faculty_subjects where id = $id and id = f_id");
+    $subject = mysqli_fetch_assoc($res)["subject"];
     foreach ($_POST as $key => $val) {
-        echo $key . " : " . $val . "<br>";
+        $res = mysqli_query($conn,"select semester from student where id = $key");
+        $semester = mysqli_fetch_assoc($res)["semester"];
+        $ct = mysqli_query($conn, "select * from result where s_id = $key and subject = '$subject'");      
+        if (mysqli_num_rows($ct) == 0) {
+            mysqli_query($conn, "insert into result values($key,'$subject',$semester,'$val');");
+        } else {
+            mysqli_query($conn, "update result set grade = '$val' where s_id = $key");
+        }
     }
-    unset($_SESSION["batch"]);
+    set_message("the result is successfully saved");
 } else {
     if (!isset($_SESSION["batch"])) {
         header("location: select_batch.php");
+        die;
     }
 }
 ?>
@@ -38,9 +49,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         array_push($students, $temp);
     }
     $batch = $_SESSION["batch"];
-    unset($_SESSION["batch"]);
-
-
     $id = $_SESSION["id"];
     $subject = "";
     $res = mysqli_query($conn, "select subject from faculty, faculty_subjects where id = $id and id = f_id");
@@ -48,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     ?> <div id="grades-wrapper">
-        <form action="attendance.php" method="POST">
+        <form action="grades.php" method="POST">
             <h4> Batch: <?php echo $batch ?></h4>
             <h4>Subject: <?php echo $subject ?></h4>
             <br>
@@ -93,7 +101,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="btn"><input type="submit" value="Save">
             </div>
         </form>
-        <small style="color: red; margin-top: 10px;">Grades have been updated</small>
+        <?php
+        ?>
+        <small style="color: red; margin-top: 10px;"><?php
+                                                        if (has_messages()) {
+                                                            echo "<div id='errors'>";
+                                                            show_messages();
+                                                            delete_messages();
+                                                            echo "</div>";
+                                                        }
+                                                        ?></small>
         <a href="select_batch.php">Select a different batch</a>
     </div>
 </body>
