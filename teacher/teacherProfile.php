@@ -1,9 +1,14 @@
 <?php
 include "../partials/session.php";
 include "../partials/messages.php";
-include "../partials/student_login_required.php"
+include "../partials/student_login_required.php";
+include "../partials/sql_connect.php";
 ?>
-
+<?php
+$id = $_SESSION['id'];
+$faculty_res = mysqli_query($conn, "select name,dept,phno from faculty where id = $id");
+$faculty = mysqli_fetch_assoc($faculty_res);
+?>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/teacher.css">
@@ -18,19 +23,16 @@ include "../partials/student_login_required.php"
         <div id="profile-wrapper">
             <small>Status: Logged in</small>
             <table>
-                <tr>
-                    <th>Name</th>
-                    <td>Arpit Jain</td>
-                </tr>
-                <tr>
-                    <th>Phone Number</th>
-                    <td>9818981898</td>
-                </tr>
-                <tr>
-                    <th>Department</th>
-                    <td>CSE</td>
-                </tr>
+                <?php
+                foreach ($faculty as $key => $val) {
+                    echo "<tr>
+                    <th> $key</th>
+                    <td>$val</td>
+                    </tr>";
+                }
+                ?>
+            </table>
         </div>
-        </table>
+        
     </div>
 </body>

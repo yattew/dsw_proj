@@ -2,7 +2,8 @@
 include "../partials/session.php";
 include "../partials/messages.php";
 include "../partials/faculty_login_required.php";
-include "../partials/navbarTeacher.php"
+include "../partials/navbarTeacher.php";
+include "../partials/sql_connect.php";
 ?>
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -23,7 +24,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
     <?php
-    $batches = array("B2", "B1", "B3");
+    $id = $_SESSION["id"];
+    $res = mysqli_query($conn,"select batch from faculty, faculty_subjects where id = $id and id = f_id"); 
+    $batches = array();
+    while($temp = mysqli_fetch_assoc($res))
+    {
+        array_push($batches,$temp['batch']);
+    }
     ?>
 
     <div id="form-wrapper">
