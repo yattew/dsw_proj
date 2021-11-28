@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $enroll = $_POST["enroll"];
     $password = $_POST["password"];
     $result = mysqli_query($conn,"select * from student where id = '$enroll' and password = '$password'");
-    if ($result) {
+    if (mysqli_num_rows($result)>0) {
         $_SESSION["auth_status"] = true;
         $_SESSION["id"] = $enroll;
         $_SESSION["level"] = "student";

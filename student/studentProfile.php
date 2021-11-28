@@ -27,7 +27,7 @@ $student = mysqli_fetch_assoc($student_res);
                 <?php
                 foreach ($student as $key => $val) {
                     echo "<tr>
-                    <th>$key</th>
+                    <th> $key</th>
                     <td>$val</td>
                     </tr>";
                 }
