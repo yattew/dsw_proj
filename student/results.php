@@ -9,6 +9,8 @@ include "../partials/student_login_required.php"
 
 <head>
   <link rel="stylesheet" href="static/student.css">
+  <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
+  <title>Result | MiniKiosk</title>
 </head>
 <style>
   #container {

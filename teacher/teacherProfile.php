@@ -1,7 +1,7 @@
 <?php
 include "../partials/session.php";
 include "../partials/messages.php";
-include "../partials/faculty_login_required.php"
+include "../partials/student_login_required.php"
 ?>
 
 <head>
@@ -12,5 +12,25 @@ include "../partials/faculty_login_required.php"
 </head>
 
 <body>
-<?php include "../partials/navbarTeacher.php"  ?>
+    <?php include "../partials/navbarTeacher.php"  ?>
+    <div id="container">
+        <h3>PROFILE</h3>
+        <div id="profile-wrapper">
+            <small>Status: Logged in</small>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <td>Arpit Jain</td>
+                </tr>
+                <tr>
+                    <th>Phone Number</th>
+                    <td>9818981898</td>
+                </tr>
+                <tr>
+                    <th>Department</th>
+                    <td>CSE</td>
+                </tr>
+        </div>
+        </table>
+    </div>
 </body>
