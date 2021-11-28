@@ -16,7 +16,7 @@ include "../partials/student_login_required.php"
     <div id="container">
         <h3>PROFILE</h3>
         <div id="profile-wrapper">
-            <small>status:Logged In</small>
+            <small>Status: Logged in</small>
             <table>
                 <tr>
                     <th>Name</th>
