@@ -1,15 +1,16 @@
 <?php
 include "../partials/session.php";
-include "../partials/messages.php"
+include "../partials/messages.php";
+include "../partials/sql_connect.php";
 ?>
 
 <?php
 $error;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $enroll = 123;
-    $password = "pass";
-    if ($_POST["enroll"] == $enroll and $password == $_POST["password"]) {
-        set_message("Status: Logged in");
+    $enroll = $_POST["enroll"];
+    $password = $_POST["password"];
+    $result = mysqli_query($conn,"select * from student where id = '$enroll' and password = '$password'");
+    if ($result) {
         $_SESSION["auth_status"] = true;
         $_SESSION["id"] = $enroll;
         $_SESSION["level"] = "student";
