@@ -1,6 +1,7 @@
 <?php
 include "../partials/session.php";
-include "../partials/messages.php"
+include "../partials/messages.php";
+include "../partials/sql_connect.php";
 ?>
 
 <?php
@@ -10,7 +11,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["password"];
     $result = mysqli_query($conn,"select * from faculty where id = '$enroll' and password = '$password'");
     if ($result) {
-        set_message("Status: Logged in");
         header("location: /dsw_proj/teacher/teacherProfile.php");
         $_SESSION["auth_status"] = true;
         $_SESSION["id"] = $enroll;

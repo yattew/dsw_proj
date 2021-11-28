@@ -6,7 +6,7 @@ $navbar = '
         <div class="nav-item"> <a href="teacherProfile.php">Profile</a></div>
         <div class="nav-item"><a href="/dsw_proj/teacher/attendance.php">Attendance</a></div>
         <div class="nav-item"><a href="/dsw_proj/teacher/grades.php">Grades</a></div>
-        <div class="nav-item"><a href="#">Logout</a></div>
+        <div class="nav-item"><a href="/dsw_proj/auth/logout.php">Logout</a></div>
     </div>
 </div>
 ';

@@ -1,7 +1,13 @@
 <?php
 include "../partials/session.php";
 include "../partials/messages.php";
-include "../partials/student_login_required.php"
+include "../partials/student_login_required.php";
+include "../partials/sql_connect.php";
+?>
+<?php
+$id = $_SESSION['id'];
+$student_res = mysqli_query($conn, "select name,dob,semester,batch,course from student where id = $id");
+$student = mysqli_fetch_assoc($student_res);
 ?>
 
 <head>
@@ -18,26 +24,14 @@ include "../partials/student_login_required.php"
         <div id="profile-wrapper">
             <small>Status: Logged in</small>
             <table>
-                <tr>
-                    <th>Name</th>
-                    <td>Arpit Jain</td>
-                </tr>
-                <tr>
-                    <th>Date of Birth</th>
-                    <td>23 October 2001</td>
-                </tr>
-                <tr>
-                    <th>Semester</th>
-                    <td>3rd</td>
-                </tr>
-                <tr>
-                    <th>Batch</th>
-                    <td>B2</td>
-                </tr>
-                <tr>
-                    <th>Course</th>
-                    <td>Computer Science</td>
-                </tr>
+                <?php
+                foreach ($student as $key => $val) {
+                    echo "<tr>
+                    <th>$key</th>
+                    <td>$val</td>
+                    </tr>";
+                }
+                ?>
         </div>
         </table>
     </div>
