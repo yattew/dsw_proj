@@ -21,10 +21,29 @@ if (isset($_SESSION["batch"])) {
     die;
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    echo "<br><br>";
+    $id = $_SESSION["id"];
+    $subject = "";
+    $res = mysqli_query($conn, "select subject from faculty, faculty_subjects where id = $id and id = f_id");
+    $subject = mysqli_fetch_assoc($res)["subject"];
     $data = $_POST;
     $date = $data["date"];
     unset($data["date"]);
+    foreach ($data as $id => $status) {
+        $res = mysqli_query(
+            $conn,
+            "select * from attendance 
+            where s_id = $id and day = '$date' and subject = '$subject' and s_id = $id"
+        );
+        if (mysqli_num_rows($res) == 0) {
+            mysqli_query($conn, "insert into attendance values($id,'$date','$subject','$status')");
+        } else {
+            mysqli_query(
+                $conn,
+                "update attendance set status = '$status'
+                where s_id=$id and day = '$date'"
+            );
+        }
+    }
 }
 ?>
 <!DOCTYPE html>
