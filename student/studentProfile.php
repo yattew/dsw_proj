@@ -27,12 +27,18 @@ $student = mysqli_fetch_assoc($student_res);
                 <?php
                 foreach ($student as $key => $val) {
                     echo "<tr>
-                    <th> $key</th>
+                    <div id='key'><th>$key</th></div>
                     <td>$val</td>
                     </tr>";
                 }
                 ?>
-        </div>
+        </div> <div id="hel">hi</div>
         </table>
     </div>
+    <script>
+        let key = document.getElementById("key");
+        console.log(key);
+        let el = document.getElementById('hel');
+        console.log(el.innerHTML);
+    </script>
 </body>
