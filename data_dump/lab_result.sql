@@ -36,7 +36,7 @@ CREATE TABLE `result` (
 
 LOCK TABLES `result` WRITE;
 /*!40000 ALTER TABLE `result` DISABLE KEYS */;
-INSERT INTO `result` VALUES (1,'Data Base and Web',3,'A'),(2,'Data Base and Web',3,'A'),(1,'Data structures',3,'A'),(1,'DBW LAB',3,'A'),(1,'Data structures Lab',3,'A');
+INSERT INTO `result` VALUES (1,'Data Base and Web',3,'A'),(2,'Data Base and Web',3,'A'),(1,'Data structures',3,'A'),(1,'DBW LAB',3,'A'),(1,'Data structures Lab',3,'A'),(2,'Data Structures',3,'A'),(3,'Data Structures',3,'A'),(4,'Data Structures',3,'A');
 /*!40000 ALTER TABLE `result` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -49,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-28 18:20:36
+-- Dump completed on 2021-11-29 20:21:39

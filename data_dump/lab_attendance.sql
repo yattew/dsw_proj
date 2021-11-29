@@ -25,6 +25,7 @@ DROP TABLE IF EXISTS `attendance`;
 CREATE TABLE `attendance` (
   `s_id` int DEFAULT NULL,
   `day` date DEFAULT NULL,
+  `subject` varchar(255) DEFAULT NULL,
   `status` varchar(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -35,6 +36,7 @@ CREATE TABLE `attendance` (
 
 LOCK TABLES `attendance` WRITE;
 /*!40000 ALTER TABLE `attendance` DISABLE KEYS */;
+INSERT INTO `attendance` VALUES (1,'2021-11-29','Data Structures','1'),(2,'2021-11-29','Data Structures','0'),(3,'2021-11-29','Data Structures','1'),(4,'2021-11-29','Data Structures','0');
 /*!40000 ALTER TABLE `attendance` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -47,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-28 18:20:36
+-- Dump completed on 2021-11-29 20:21:39
