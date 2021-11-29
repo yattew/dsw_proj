@@ -9,6 +9,6 @@ if(isset($_SESSION["batch"]))
 {
     unset($_SESSION["batch"]);
 }
-set_message("you are now logged out");
+set_message("Session: You have logged out.");
 header("location: loginStudent.php");
 ?>

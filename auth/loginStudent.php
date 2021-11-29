@@ -9,8 +9,8 @@ $error;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $enroll = $_POST["enroll"];
     $password = $_POST["password"];
-    $result = mysqli_query($conn,"select * from student where id = '$enroll' and password = '$password'");
-    if (mysqli_num_rows($result)>0) {
+    $result = mysqli_query($conn, "select * from student where id = '$enroll' and password = '$password'");
+    if (mysqli_num_rows($result) > 0) {
         $_SESSION["auth_status"] = true;
         $_SESSION["id"] = $enroll;
         $_SESSION["level"] = "student";
@@ -52,8 +52,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     ?></div>
             </form>
             <div id="loginElsewhere">
-            or <a href="loginTeacher.php">click here</a> to go to the faculty login page
-        </div> </div>
+                or <a href="loginTeacher.php">click here</a> to go to the faculty login page
+            </div>
+        </div>
     </div>
 </body>
 
