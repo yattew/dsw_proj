@@ -6,27 +6,25 @@ include "../partials/navbarTeacher.php";
 include "../partials/sql_connect.php";
 ?>
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    echo "<br><br>";
-    foreach ($_POST as $key => $val) {
-        echo $key . " : " . $val . "<br>";
+if (isset($_SESSION["batch"])) {
+    $batch = $_SESSION["batch"];
+    $res = mysqli_query(
+        $conn,
+        "select id, name from student where batch = '$batch' "
+    );
+    $students = array();
+    while ($temp = mysqli_fetch_assoc($res)) {
+        array_push($students, $temp);
     }
 } else {
-    if (isset($_SESSION["batch"])) {
-        $batch = $_SESSION["batch"];
-        $res = mysqli_query(
-            $conn,
-            "select id, name from student where batch = '$batch' "
-        );
-        $students = array();
-        while($temp = mysqli_fetch_assoc($res))
-        {
-            array_push($students,$temp);
-        }
-    } else {
-        header("location: select_batch1.php");
-        die;
-    }
+    header("location: select_batch1.php");
+    die;
+}
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    echo "<br><br>";
+    $data = $_POST;
+    $date = $data["date"];
+    unset($data["date"]);
 }
 ?>
 <!DOCTYPE html>
