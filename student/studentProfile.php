@@ -32,13 +32,9 @@ $student = mysqli_fetch_assoc($student_res);
                     </tr>";
                 }
                 ?>
-        </div> <div id="hel">hi</div>
         </table>
     </div>
-    <script>
-        let key = document.getElementById("key");
-        console.log(key);
-        let el = document.getElementById('hel');
-        console.log(el.innerHTML);
-    </script>
+    <?php
+        $string = 'random string';
+    ?>
 </body>

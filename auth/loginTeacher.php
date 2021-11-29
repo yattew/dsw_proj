@@ -9,8 +9,8 @@ $error;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $enroll = $_POST["enroll"];
     $password = $_POST["password"];
-    $result = mysqli_query($conn,"select * from faculty where id = '$enroll' and password = '$password'");
-    if (mysqli_num_rows($result)>0) {
+    $result = mysqli_query($conn, "select * from faculty where id = '$enroll' and password = '$password'");
+    if (mysqli_num_rows($result) > 0) {
         header("location: /dsw_proj/teacher/teacherProfile.php");
         $_SESSION["auth_status"] = true;
         $_SESSION["id"] = $enroll;
@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <form action="loginTeacher.php" method="POST">
                 <input type="number" placeholder="Faculty ID" name="enroll" id="enrol">
                 <input type="password" placeholder="Password" name="password" id="pass">
-                <div><input type="submit" value="Login"></div>
+                <div><input type="submit" value="Login" onclick="checkBlankFields();"></div>
                 <div id="credStat"><?php
                                     if (has_messages()) {
                                         echo "<div id='errors'>";
@@ -52,9 +52,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     ?></div>
             </form>
             <div id="loginElsewhere">
-            or <a href="loginStudent.php">click here</a> to go to the student login page
-        </div> </div>
+                or <a href="loginStudent.php">click here</a> to go to the student login page
+            </div>
+        </div>
     </div>
+    <script src="static/teacher.js"></script>
 </body>
 
 </html>
