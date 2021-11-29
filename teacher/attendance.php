@@ -44,6 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             );
         }
     }
+    set_message("attendance has been saved");
 }
 ?>
 <!DOCTYPE html>
@@ -84,7 +85,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 ?>
             </table>
             <div class="btn"><input type="submit" value="Save Attendance"> </div>
-            <div id="updated"><small>Attendance has been updated</small></div>
+            <div id="updated"><small><?php
+                                        if (has_messages()) {
+                                            echo "<div id='errors'>";
+                                            show_messages();
+                                            delete_messages();
+                                            echo "</div>";
+                                        }
+                                        ?></small></div>
             <a href="select_batch1.php">Select a different batch</a>
         </form>
     </div>
