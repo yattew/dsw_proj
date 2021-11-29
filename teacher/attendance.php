@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             );
         }
     }
-    set_message("attendance has been saved");
+    set_message("Attendance has been saved");
 }
 ?>
 <!DOCTYPE html>
@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div id="form-wrapper">
         <h3>ATTENDANCE</h3>
         <form action="attendance.php" method="POST">
-            Date:<input type="date" name="date">
+            Date:<input type="date" name="date" id="today">
             <br>
             <table>
                 <tr>
@@ -93,9 +93,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                             echo "</div>";
                                         }
                                         ?></small></div>
-            <a href="select_batch1.php">Select a different batch</a>
+            <a href="select_batch1.php" id="diffbatch">Select a different batch</a>
         </form>
     </div>
+    <script src="static/attendance.js"></script>
 </body>
 
 </html>
