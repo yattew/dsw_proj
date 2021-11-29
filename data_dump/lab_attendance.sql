@@ -36,7 +36,7 @@ CREATE TABLE `attendance` (
 
 LOCK TABLES `attendance` WRITE;
 /*!40000 ALTER TABLE `attendance` DISABLE KEYS */;
-INSERT INTO `attendance` VALUES (1,'2021-11-29','Data Structures','1'),(2,'2021-11-29','Data Structures','0'),(3,'2021-11-29','Data Structures','1'),(4,'2021-11-29','Data Structures','0');
+INSERT INTO `attendance` VALUES (1,'2021-11-29','Data Structures','1'),(2,'2021-11-29','Data Structures','0'),(3,'2021-11-29','Data Structures','1'),(4,'2021-11-29','Data Structures','0'),(1,'2021-11-28','Data Structures','1'),(2,'2021-11-28','Data Structures','1'),(3,'2021-11-28','Data Structures','0'),(4,'2021-11-28','Data Structures','1'),(1,'2021-11-14','Data Structures','1'),(2,'2021-11-14','Data Structures','1'),(3,'2021-11-14','Data Structures','0'),(4,'2021-11-14','Data Structures','0'),(1,'2021-11-01','Data Structures','1'),(2,'2021-11-01','Data Structures','0'),(3,'2021-11-01','Data Structures','0'),(4,'2021-11-01','Data Structures','0'),(1,'2021-11-03','Data Structures','1'),(2,'2021-11-03','Data Structures','1'),(3,'2021-11-03','Data Structures','1'),(4,'2021-11-03','Data Structures','1'),(1,'2021-11-29','Data Base and Web','1'),(1,'2021-11-28','Data Base and Web','1'),(1,'2021-11-27','Data Base and Web','1'),(1,'2021-11-26','Data Base and Web','1'),(1,'2021-11-25','Data Base and Web','0'),(1,'2021-11-29','DBW LAB','1'),(1,'2021-11-29','DBW LAB','1'),(1,'2021-11-29','DBW LAB','0'),(1,'2021-11-29','DBW LAB','0'),(1,'2021-11-29','DBW LAB','1');
 /*!40000 ALTER TABLE `attendance` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -49,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-29 20:21:39
+-- Dump completed on 2021-11-29 22:49:28

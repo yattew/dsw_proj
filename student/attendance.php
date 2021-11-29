@@ -1,9 +1,35 @@
 <?php
 include "../partials/session.php";
 include "../partials/messages.php";
-include "../partials/student_login_required.php"
+include "../partials/student_login_required.php";
+include "../partials/sql_connect.php";
 ?>
+<?php
+$id = $_SESSION["id"];
+$subjects = mysqli_query(
+  $conn,
+  "select distinct(subject) as subject from attendance where s_id = $id"
+);
+$attendance = array();
+while ($temp = mysqli_fetch_assoc($subjects)) {
+  $temp = $temp["subject"];
+  $tot = mysqli_fetch_assoc(
+    mysqli_query(
+      $conn,
+      "select count(*) as ct from attendance where s_id = $id and subject = '$temp'"
+    )
+  )["ct"];
+  $present = mysqli_fetch_assoc(
+    mysqli_query(
+      $conn,
+      "select count(*) as ct from attendance where s_id = $id and status = '1' and subject = '$temp'"
+    )
+  )["ct"];
+  $percent = ($present/$tot) * 100;
+  array_push($attendance, array($temp, $percent));
+}
 
+?>
 <!DOCTYPE html>
 <html>
 
@@ -69,7 +95,19 @@ include "../partials/student_login_required.php"
         <th>SUBJECT</th>
         <th style="width:18%">ATTENDANCE %</th>
       </tr>
-      <tr style="height:50px" ;bgcolor="lightblue">
+      <?php
+      $ct = 1;
+      foreach ($attendance as $res) {
+        echo '<tr style="height:50px">';
+        echo "<td>$ct.</td>";
+        $subject = $res[0];
+        $percent = $res[1];
+        echo "<td>$subject</td>";
+        echo "<td>$percent</td>";
+        echo "</tr>";
+      }
+      ?>
+      <!-- <tr style="height:50px" ;bgcolor="lightblue">
         <td>1.</td>
         <td>DATA STRUCTURES - (15B11CI311)</td>
         <td>60%</td>
@@ -96,7 +134,7 @@ include "../partials/student_login_required.php"
       </tr>
       <tr style="height:50px">
         <td>6.</td>
-       <td>ELECTRICAL SCIENCE LAB -2 - (15B17EC271)</td>
+        <td>ELECTRICAL SCIENCE LAB -2 - (15B17EC271)</td>
         <td>60%</td>
       </tr>
       <tr style="height:50px">
@@ -108,7 +146,7 @@ include "../partials/student_login_required.php"
         <td>8.</td>
         <td>THEORETICAL FOUNDATIONS OF COMPUTER SCIENCE - (15B11CI212)</td>
         <td>60%</td>
-      </tr>
+      </tr> -->
     </table>
   </div>
 </body>
