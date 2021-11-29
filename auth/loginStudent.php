@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <form action="loginStudent.php" method="POST">
                 <input type="number" placeholder="Enrolment Number" name="enroll" id="enrol">
                 <input type="password" placeholder="Password" name="password" id="pass">
-                <div><input type="submit" value="Login"></div>
+                <div><input type="submit" value="Login" id="submit" onclick="checkBlankFields();"></div>
                 <div id="credStat"><?php
                                     if (has_messages()) {
                                         echo "<div id='errors'>";
@@ -56,6 +56,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </div>
     </div>
+    <script src="static/index.js">
+    </script>
 </body>
 
 </html>
