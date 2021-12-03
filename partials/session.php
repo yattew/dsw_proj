@@ -1,15 +1,15 @@
 <?php
 session_start();
-if(isset($_SESSION["enroll"]))
+if(!isset($_SESSION["id"]))
 {
-    $_SESSION["id"] == false;
+    $_SESSION["id"] = false;
 }
-if(isset($_SESSION["level"]))
+if(!isset($_SESSION["level"]))
 {
     $_SESSION["level"] = false;
 }
-if(isset($_SESSION["auth_status"]))
+if(!isset($_SESSION["auth_status"]))
 {
-    $_SESSION["auth_status"] == false;
+    $_SESSION["auth_status"] = false;
 }
 ?>
