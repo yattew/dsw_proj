@@ -1,3 +1,3 @@
 <?php
-$conn = mysqli_connect("localhost","root","986818","lab",$port = "3307");
+$conn = mysqli_connect("localhost","root","","lab",$port = "3306");
 ?>

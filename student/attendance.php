@@ -100,6 +100,7 @@ while ($temp = mysqli_fetch_assoc($subjects)) {
       foreach ($attendance as $res) {
         echo '<tr style="height:50px">';
         echo "<td>$ct.</td>";
+        $ct = $ct + 1;
         $subject = $res[0];
         $percent = $res[1];
         echo "<td>$subject</td>";
