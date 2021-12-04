@@ -11,10 +11,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["password"];
     $result = mysqli_query($conn, "select * from faculty where id = '$enroll' and password = '$password'");
     if (mysqli_num_rows($result) > 0) {
-        header("location: /dsw_proj/teacher/teacherProfile.php");
         $_SESSION["auth_status"] = true;
         $_SESSION["id"] = $enroll;
         $_SESSION["level"] = "faculty";
+        header("location: /dsw_proj/teacher/teacherProfile.php");
         die;
     } else {
         $error = "User credentials are incorrect.";
