@@ -3,6 +3,25 @@ include "../partials/session.php";
 include "../partials/messages.php";
 include "../partials/sql_connect.php";
 ?>
+
+<?php
+$error;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $userid = $_POST["user"];
+    $password = $_POST["password"];
+    $result = mysqli_query($conn, "select * from admin where id = '$userid' and password = '$password'");
+    if (mysqli_num_rows($result) > 0) {
+        $_SESSION["auth_status"] = true;
+        $_SESSION["id"] = $userid;
+        $_SESSION["level"] = "admin";
+        header("location: /dsw_proj/admin/index.php");
+        die;
+    } else {
+        $error = "User credentials are incorrect.";
+        set_message($error);
+    }
+}
+?>
 <!DOCTYPE html>
 <html>
 
