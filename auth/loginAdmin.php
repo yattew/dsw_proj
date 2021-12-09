@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <h3>ADMIN LOGIN</h3>
             <!-- Temporarily change method to GET to avoid reload prompts in browser -->
             <form action="loginAdmin.php" method="POST">
-                <input type="number" placeholder="Admin Username" name="user" id="user">
+                <input type="number" placeholder="Admin ID" name="user" id="user">
                 <input type="password" placeholder="Password" name="password" id="pass">
                 <div><input type="submit" value="Login" id="submit" onclick="checkBlankFields();"></div>
                 <div id="credStat">
