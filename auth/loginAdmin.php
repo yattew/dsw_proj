@@ -1,3 +1,9 @@
+<?php
+include "../partials/session.php";
+include "../partials/messages.php";
+include "../partials/sql_connect.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +13,5 @@
     <title>Document</title>
 </head>
 <body>
-    
 </body>
 </html>
