@@ -21,6 +21,8 @@
             <form action="add_teacher.php" method="get">
             <input type="submit" value="Add Teacher">
             </form>
+            <a href="list_teachers.php">view teachers</a>
+            <a href="list_students.php">view students.php</a>
     </div>
 </body>
 </html>
