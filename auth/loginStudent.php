@@ -33,8 +33,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
+    <marquee behavior="" scrollamount=20 direction="right">
+        <p style="color:white">Jaypee Institute of Information Technology, Noida-62</p>
+    </marquee>
     <div id="container">
-        <h2>MiniKiosk</h2>
+        <h2 style="color: white;">MiniKiosk</h2>
         <div id="form-wrapper">
             <h3>STUDENT LOGIN</h3>
             <!-- Temporarily change method to GET to avoid reload prompts in browser -->
