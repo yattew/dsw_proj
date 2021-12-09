@@ -1,3 +1,7 @@
 <?php
-$conn = mysqli_connect("localhost","root","","lab",$port = "3306");
+$user = 'root';
+$pass = '';
+$database = 'lab';
+
+$conn = mysqli_connect("localhost",$user,$pass,$database,$port = "3306");
 ?>
