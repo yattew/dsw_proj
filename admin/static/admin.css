@@ -129,6 +129,24 @@ input:focus::placeholder {
   align-items: center;
 }
 
+#table2-wrapper {
+  text-align: center;
+  padding: 40px;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 100px;
+  background: #e6e6e6e7;
+  min-height: 220px;
+  max-width: 600px;
+  box-shadow: 0px 5px 30px -3px rgb(37, 37, 37);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 table {
   border-collapse: separate;
   border-spacing: 0 1rem;

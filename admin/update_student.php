@@ -47,24 +47,35 @@ if ($_SERVER["REQUEST_METHOD"] == 'GET') {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="static/admin.css">
+    <title>Edit Student | MiniKiosk</title>
 </head>
 
-<body>
+<body style='background-image: url("assets/jaypee.jpg"); background-size: 100%; background-attachment: fixed;'>
+<div id="navbar">
+        <div id="title">
+            <h3>MiniKiosk</h3><small> <a href="index.php"> Admin Panel </a></small>
+        </div>
+        <div id="nav-items">
+            <div class="nav-item"><a href="/dsw_proj/auth/logout.php">Logout</a></div>
+        </div>
+    </div>
+<div id="table2-wrapper">
     <form action="update_student.php" method="POST">
         <input type="number" name="id" id="" value="<?php echo $id ?>" hidden>
-        name: <input type="text" name="name" id="name" value="<?php echo $student['name']?>">
+        Name <br> <input type="text" name="name" id="name" value="<?php echo $student['name']?>">
         <br>
-        dob: <input type="date" name="dob" id="" value="<?php echo $student['dob']?>">
+        Date of Birth <br> <input type="date" name="dob" id="" value="<?php echo $student['dob']?>">
         <br>
-        semester: <input type="number" name="semester" id="" value="<?php echo $student['semester']?>">
+        Semester <br> <input type="number" name="semester" id="" value="<?php echo $student['semester']?>">
         <br>
-        batch: <input type="text" name="batch" id="" value="<?php echo $student['batch']?>">
+        Batch <br> <input type="text" name="batch" id="" value="<?php echo $student['batch']?>">
         <br>
-        course: <input type="text" name="course" id="" value="<?php echo $student['course']?>">
+        Course <br> <input type="text" name="course" id="" value="<?php echo $student['course']?>">
         <br>
         <input type="submit" value="save">
     </form>
+</div>
 </body>
 
 </html>

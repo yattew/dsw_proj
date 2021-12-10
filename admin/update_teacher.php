@@ -44,18 +44,28 @@ if ($_SERVER["REQUEST_METHOD"] == 'GET') {
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="static/admin.css">   
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Edit Teacher | MiniKiosk</title>
 </head>
 
-<body>
+<body style='background-image: url("assets/jaypee.jpg"); background-size: 100%; background-attachment: fixed;'>
+<div id="navbar">
+        <div id="title">
+            <h3>MiniKiosk</h3><small> <a href="index.php"> Admin Panel </a></small>
+        </div>
+        <div id="nav-items">
+            <div class="nav-item"><a href="/dsw_proj/auth/logout.php">Logout</a></div>
+        </div>
+    </div>
+<div id="table2-wrapper">
     <form action="update_teacher.php" method="POST">
         <input type="number" name="id" id="" value="<?php echo $id ?>" hidden>
-        name: <input type="text" name="name" id="name" value="<?php echo $teacher['name']?>">
+        Name <br><input type="text" name="name" id="name" value="<?php echo $teacher['name']?>">
         <br>
-        batch: <input type="number" name="phno" id="" value="<?php echo $teacher['phno']?>">
+        Batch <br> <input type="number" name="phno" id="" value="<?php echo $teacher['phno']?>">
         <br>
-        course: <input type="text" name="dept" id="" value="<?php echo $teacher['dept']?>">
+        Course <br> <input type="text" name="dept" id="" value="<?php echo $teacher['dept']?>">
         <br>
         <input type="submit" value="save">
     </form>
