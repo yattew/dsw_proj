@@ -31,6 +31,6 @@ function set_message($message)
     }
     else{
         $_SESSION["messages"] = array();
-        array_push($_SESSION["messsages"],$message);
+        array_push($_SESSION["messages"],$message);
     }
 }

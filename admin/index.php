@@ -1,3 +1,7 @@
+<?php
+include "../partials/admin_login_required.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -2,6 +2,7 @@
 include "../partials/session.php";
 include "../partials/messages.php";
 include "../partials/sql_connect.php";
+include "../partials/admin_login_required.php";
 ?>
 
 <?php
