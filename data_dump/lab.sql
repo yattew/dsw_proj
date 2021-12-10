@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 09, 2021 at 03:18 PM
+-- Generation Time: Dec 10, 2021 at 12:20 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -87,7 +87,42 @@ INSERT INTO `attendance` (`s_id`, `day`, `subject`, `status`) VALUES
 (1, '2021-11-29', 'DBW LAB', '1'),
 (1, '2021-11-29', 'DBW LAB', '0'),
 (1, '2021-11-29', 'DBW LAB', '0'),
-(1, '2021-11-29', 'DBW LAB', '1');
+(1, '2021-11-29', 'DBW LAB', '1'),
+(1, '2021-12-10', 'Ninjutsu 101', '1'),
+(2, '2021-12-10', 'Ninjutsu 101', '1'),
+(3, '2021-12-10', 'Ninjutsu 101', '1'),
+(4, '2021-12-10', 'Ninjutsu 101', '1'),
+(1, '2021-12-06', 'Ninjutsu 101', '1'),
+(2, '2021-12-06', 'Ninjutsu 101', '0'),
+(3, '2021-12-06', 'Ninjutsu 101', '1'),
+(4, '2021-12-06', 'Ninjutsu 101', '1'),
+(1, '2021-12-27', 'Ninjutsu 101', '1'),
+(2, '2021-12-27', 'Ninjutsu 101', '1'),
+(4, '2021-12-27', 'Ninjutsu 101', '1'),
+(5, '2021-12-10', 'Data Base and Web', '1'),
+(6, '2021-12-10', 'Data Base and Web', '1'),
+(7, '2021-12-10', 'Data Base and Web', '1'),
+(8, '2021-12-10', 'Data Base and Web', '1'),
+(5, '2021-12-15', 'Data Base and Web', '0'),
+(6, '2021-12-15', 'Data Base and Web', '1'),
+(7, '2021-12-15', 'Data Base and Web', '0'),
+(8, '2021-12-15', 'Data Base and Web', '0'),
+(1, '2021-12-10', 'Data Base and Web', '1'),
+(2, '2021-12-10', 'Data Base and Web', '1'),
+(3, '2021-12-10', 'Data Base and Web', '1'),
+(4, '2021-12-10', 'Data Base and Web', '1'),
+(1, '2021-12-06', 'Data Base and Web', '1'),
+(2, '2021-12-06', 'Data Base and Web', '1'),
+(3, '2021-12-06', 'Data Base and Web', '1'),
+(4, '2021-12-06', 'Data Base and Web', '1'),
+(1, '2021-12-03', 'Data Base and Web', '0'),
+(2, '2021-12-03', 'Data Base and Web', '1'),
+(3, '2021-12-03', 'Data Base and Web', '0'),
+(4, '2021-12-03', 'Data Base and Web', '1'),
+(1, '2021-12-14', 'Data Base and Web', '0'),
+(2, '2021-12-14', 'Data Base and Web', '0'),
+(3, '2021-12-14', 'Data Base and Web', '0'),
+(4, '2021-12-14', 'Data Base and Web', '0');
 
 -- --------------------------------------------------------
 
@@ -108,7 +143,9 @@ CREATE TABLE `faculty` (
 --
 
 INSERT INTO `faculty` (`id`, `name`, `phno`, `password`, `dept`) VALUES
-(2, 'Einstein', 123456, 'pass', 'CSE');
+(1, 'kakashi', 12345123, 'pass', 'Ninjutsu'),
+(2, 'Einstein', 123456, 'pass', 'CSE'),
+(3, 'Linus Torvalds', 123456, 'pass', 'Data Bases');
 
 -- --------------------------------------------------------
 
@@ -128,7 +165,11 @@ CREATE TABLE `faculty_subjects` (
 
 INSERT INTO `faculty_subjects` (`f_id`, `subject`, `batch`) VALUES
 (2, 'Data Structures', 'B2'),
-(2, 'Data Structures', 'B1');
+(2, 'Data Structures', 'B1'),
+(1, 'Ninjutsu 101', 'B2'),
+(2, 'Physics 101', 'B2'),
+(3, 'Data Base and Web', 'B2'),
+(3, 'Data Base and Web', 'B1');
 
 -- --------------------------------------------------------
 
@@ -155,7 +196,13 @@ INSERT INTO `result` (`s_id`, `subject`, `semester`, `grade`) VALUES
 (1, 'Data structures Lab', 3, 'A'),
 (2, 'Data Structures', 3, 'A'),
 (3, 'Data Structures', 3, 'A'),
-(4, 'Data Structures', 3, 'A');
+(4, 'Data Structures', 3, 'A'),
+(1, 'Ninjutsu 101', 3, 'A'),
+(2, 'Ninjutsu 101', 3, 'A'),
+(3, 'Ninjutsu 101', 3, 'A'),
+(4, 'Ninjutsu 101', 3, 'B'),
+(3, 'Data Base and Web', 3, 'B'),
+(4, 'Data Base and Web', 3, 'B');
 
 -- --------------------------------------------------------
 
@@ -183,7 +230,9 @@ INSERT INTO `student` (`id`, `name`, `dob`, `semester`, `batch`, `course`, `pass
 (3, 'nishttha', '2001-01-04', 3, 'B2', 'CSE', 'pass'),
 (4, 'simran', '2002-07-10', 3, 'B2', 'CSE', 'pass'),
 (5, 'sarthak', '2002-05-10', 3, 'B1', 'CSE', 'pass'),
-(6, 'naman', '2002-08-11', 3, 'B1', 'CSE', 'pass');
+(6, 'naman', '2002-08-11', 3, 'B1', 'CSE', 'pass'),
+(7, 'sasuke uchiha', '2021-12-05', 1, 'B1', 'CSE', 'pass'),
+(8, 'naruto', '2021-12-15', 1, 'B1', 'CSE', 'pass');
 
 --
 -- Indexes for dumped tables
@@ -215,13 +264,13 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT for table `faculty`
 --
 ALTER TABLE `faculty`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

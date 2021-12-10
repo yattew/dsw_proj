@@ -102,7 +102,7 @@ while ($temp = mysqli_fetch_assoc($subjects)) {
         echo "<td>$ct.</td>";
         $ct = $ct + 1;
         $subject = $res[0];
-        $percent = $res[1];
+        $percent = round($res[1],2);
         echo "<td>$subject</td>";
         echo "<td>$percent</td>";
         echo "</tr>";
