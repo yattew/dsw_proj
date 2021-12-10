@@ -102,52 +102,13 @@ while ($temp = mysqli_fetch_assoc($subjects)) {
         echo "<td>$ct.</td>";
         $ct = $ct + 1;
         $subject = $res[0];
-        $percent = $res[1];
+        $percent = round($res[1],2);
         echo "<td>$subject</td>";
         echo "<td>$percent</td>";
         echo "</tr>";
       }
       ?>
-      <!-- <tr style="height:50px" ;bgcolor="lightblue">
-        <td>1.</td>
-        <td>DATA STRUCTURES - (15B11CI311)</td>
-        <td>60%</td>
-      </tr>
-      <tr style="height:50px">
-        <td>2.</td>
-        <td>DATA STRUCTURES LAB - (15B17CI371)</td>
-        <td>60%</td>
-      </tr>
-      <tr style="height:50px">
-        <td>3.</td>
-        <td>DATABASE SYSTEMS AND WEB - (15B11CI312)</td>
-        <td>60%</td>
-      </tr>
-      <tr style="height:50px">
-        <td>4.</td>
-        <td>DATABASE SYSTEMS AND WEB LAB - (15B17CI372)</td>
-        <td>60%</td>
-      </tr>
-      <tr style="height:50px">
-        <td>5.</td>
-        <td>ECONOMICS - (15B11HS211)</td>
-        <td>60%</td>
-      </tr>
-      <tr style="height:50px">
-        <td>6.</td>
-        <td>ELECTRICAL SCIENCE LAB -2 - (15B17EC271)</td>
-        <td>60%</td>
-      </tr>
-      <tr style="height:50px">
-        <td>7.</td>
-        <td>ELECTRICAL SCIENCE-2 - (15B11EC211)</td>
-        <td>60%</td>
-      </tr>
-      <tr style="height:50px">
-        <td>8.</td>
-        <td>THEORETICAL FOUNDATIONS OF COMPUTER SCIENCE - (15B11CI212)</td>
-        <td>60%</td>
-      </tr> -->
+
     </table>
   </div>
 </body>
