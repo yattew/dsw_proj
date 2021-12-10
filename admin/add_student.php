@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body style='background-image: url("assets/jaypee.jpg"); background-size: 100%; background-attachment: fixed;'>
     <div id="navbar">
         <div id="title">
-            <h3>MiniKiosk</h3><small>Admin Panel</small>
+            <h3>MiniKiosk</h3><small> <a href="index.php"> Admin Panel </a></small>
         </div>
         <div id="nav-items">
             <div class="nav-item"><a href="/dsw_proj/auth/logout.php">Logout</a></div>

@@ -37,22 +37,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Add Teacher | MiniKiosk</title>
+    <link rel="stylesheet" href="static/admin.css">
 </head>
 
 <body>
+<body style='background-image: url("assets/jaypee.jpg"); background-size: 100%; background-attachment: fixed;'>
+    <div id="navbar">
+        <div id="title">
+            <h3>MiniKiosk</h3><small> <a href="index.php"> Admin Panel </a></small>
+        </div>
+        <div id="nav-items">
+            <div class="nav-item"><a href="/dsw_proj/auth/logout.php">Logout</a></div>
+        </div>
+    </div>
+    <div id="form-wrapper"> <h3>ADD TEACHER</h3> <br> <br>
     <form action="add_teacher.php" method="POST">
-        id:<input type="number" name="id" id="id">
+        ID <br><input type="number" name="id" id="id">
         <br>
-        name:<input type="text" name="name" id="name">
+        Name <br><input type="text" name="name" id="name">
         <br>
-        phno: <input type="number" name="phno" id="phno">
+        Phone No. <br><input type="number" name="phno" id="phno">
         <br>
-        password: <input type="text" name="password" id="password">
+        Set Password <br><input type="text" name="password" id="password">
         <br>
-        dept: <input type="text" name="dept" id="dept">
+        Department <br><input type="text" name="dept" id="dept">
         <br>
-        <input type="submit" value="save">
+        <input type="submit" value="Save" onclick="checkBlankFields2();">
     </form>
     <div id="credStat"><?php
                         if (has_messages()) {
@@ -61,7 +72,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             delete_messages();
                             echo "</div>";
                         }
-                        ?></div>
+                        ?></div> </div>
+    <script src="static/admin.js"></script>
 </body>
 
 </html>

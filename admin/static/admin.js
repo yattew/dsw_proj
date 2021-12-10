@@ -19,3 +19,18 @@ function checkBlankFields() {
     alert("Please fill in all the details!");
   }
 }
+
+function checkBlankFields2() {
+  if (
+    id.value == "" ||
+    nameField.value == "" ||
+    dob.value == "" ||
+    sem.value == "" ||
+    batch.value == "" ||
+    course.value == "" ||
+    pass.value == ""
+  ) {
+    alert("Please fill in all the details!");
+  }
+}
+
