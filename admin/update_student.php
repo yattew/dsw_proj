@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'GET') {
     }
     else
     {
-        set_message("errro encountered while updating");
+        set_message("error encountered while updating");
     }
     header("location: list_students.php");
 }

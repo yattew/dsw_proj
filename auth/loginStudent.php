@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-    <marquee behavior="" scrollamount=20 direction="right">
+    <marquee behavior="" scrollamount=10 direction="right">
         <p style="color:white">Jaypee Institute of Information Technology, Noida-62</p>
     </marquee>
     <div id="container">

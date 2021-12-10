@@ -4,6 +4,7 @@ include "../partials/admin_login_required.php";
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,22 +12,31 @@ include "../partials/admin_login_required.php";
     <link rel="stylesheet" href="static/admin.css">
     <title>Admin Panel | MiniKiosk</title>
 </head>
+
 <body style='background-image: url("assets/jaypee.jpg"); background-size: 100%;'>
-<div id="navbar"> 
-    <div id="title"><h3>MiniKiosk</h3><small>Admin Panel</small></div>
-    <div id="nav-items">
-    <div class="nav-item"><a href="/dsw_proj/auth/logout.php">Logout</a></div>
+    <div id="navbar">
+        <div id="title">
+            <h3>MiniKiosk</h3><small> <a href="index.php"> Admin Panel </a></small>
+        </div>
+        <div id="nav-items">
+            <div class="nav-item"><a href="/dsw_proj/auth/logout.php">Logout</a></div>
+        </div>
     </div>
-</div>
-<div id="profile-wrapper">
-            <form action="add_student.php" method="get">
-                <input type="submit" value="Add Student">
-            </form>
-            <form action="add_teacher.php" method="get">
+    <div id="profile-wrapper">
+        <form action="add_student.php" method="get">
+            <input type="submit" value="Add Student">
+        </form>
+        <form action="add_teacher.php" method="get">
             <input type="submit" value="Add Teacher">
-            </form>
-            <a href="list_teachers.php">view teachers</a>
-            <a href="list_students.php">view students.php</a>
+        </form>
+        <form action="list_students.php" method="get">
+            <input type="submit" value="View Student Data">
+        </form>
+        <form action="list_teachers.php" method="get">
+            <input type="submit" value="View Teacher Data">
+        </form>
+
     </div>
 </body>
+
 </html>
