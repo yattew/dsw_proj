@@ -12,10 +12,20 @@ include "../partials/admin_login_required.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/admin.css">
     <title>Teacher Data</title>
 </head>
 
-<body>
+<body style='background-image: url("assets/jaypee.jpg"); background-size: 100%; background-attachment: fixed;'>
+<div id="navbar">
+        <div id="title">
+            <h3>MiniKiosk</h3><small> <a href="index.php"> Admin Panel </a></small>
+        </div>
+        <div id="nav-items">
+            <div class="nav-item"><a href="/dsw_proj/auth/logout.php">Logout</a></div>
+        </div>
+    </div>
+<div id="table-wrapper">
     <table>
         <tr>
             <th>
@@ -25,7 +35,7 @@ include "../partials/admin_login_required.php";
                 NAME
             </th>
             <th>
-                PHNO
+                PHONE NO.
             </th>
             <th>
                 DEPT
@@ -45,7 +55,7 @@ include "../partials/admin_login_required.php";
             $id = $teacher["id"];
             echo "<td><form action='update_teacher.php'>
                 <input type='number' name='id' id='id' hidden value='$id'>
-                <input type='submit' value='edit'>
+                <input type='submit' value='Edit'>
                 </form></td>";
             echo '</tr>';
         }

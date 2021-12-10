@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         select * from student where id = $id; 
     ";
     if (mysqli_num_rows(mysqli_query($conn, $sql)) > 0) {
-        set_message("student already exists");
+        set_message("Student already exists");
     } else {
         $sql = "
             insert into student values(
@@ -80,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <br>
             <input type="submit" value="Save" onclick="checkBlankFields();">
         </form>
-        <div id="credStat"><?php
+        <div id="credStat" style="color:red;"><?php
                             if (has_messages()) {
                                 echo "<div id='errors'>";
                                 show_messages();

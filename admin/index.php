@@ -33,10 +33,10 @@ include "../partials/admin_login_required.php";
             <input type="submit" value="Add Teacher">
         </form>
         <form action="list_students.php" method="get">
-            <input type="submit" value="View Student Data">
+            <input type="submit" value="View/Edit Existing Student Data">
         </form>
         <form action="list_teachers.php" method="get">
-            <input type="submit" value="View Teacher Data">
+            <input type="submit" value="View/Edit Existing Teacher Data">
         </form>
 
     </div>

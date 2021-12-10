@@ -15,16 +15,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         select * from faculty where id = $id; 
     ";
     if (mysqli_num_rows(mysqli_query($conn, $sql)) > 0) {
-        set_message("teacher already exists");
+        set_message("Teacher already exists");
     } else {
         $sql = "
             insert into faculty values($id,'$name',$phno,'$password','$dept')
         ";
         $res = mysqli_query($conn, $sql);
         if ($res) {
-            set_message("teacher has been added");
+            set_message("Teacher has been added");
         } else {
-            set_message("error in adding new teacher");
+            set_message("Error in adding new teacher");
         }
     }
 }
@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <br>
         <input type="submit" value="Save" onclick="checkBlankFields2();">
     </form>
-    <div id="credStat"><?php
+    <div id="credStat" style="color: red;"><?php
                         if (has_messages()) {
                             echo "<div id='errors'>";
                             show_messages();
